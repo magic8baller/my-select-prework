@@ -1,6 +1,7 @@
 def my_select(collection)
-  collection.select do |item|
-    yield if block_given?
-    collection[item]
+  if block_given?
+    collection.select do |item|
+      yield collection[item]
   end
+  collection
 end
