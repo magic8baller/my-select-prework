@@ -1,6 +1,8 @@
 def my_select(collection)
-  collection.select do |item|
-    item.even?
-    yield(collection[item])
+  i = 0
+  selected = []
+  while i < collection.size
+    if block_given? yield(collection[i])
+      selected << collection[i]
   end
 end
