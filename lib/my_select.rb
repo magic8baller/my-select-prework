@@ -2,7 +2,7 @@ def my_select(collection)
   i = 0
   selected = []
   while i < collection.size
-    if block_given?
+    if yield(collection[i])
       selected << yield(collection[i])
     end
     i += 1
