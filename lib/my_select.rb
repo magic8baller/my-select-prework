@@ -3,5 +3,4 @@ def my_select(collection)
     collection.select do |item|
       yield item
   end
-  collection
 end
